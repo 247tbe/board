@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>내용 수정</title>
+</head>
+<body>
+<form method="post" th:action="${'/modifyPost' + post.id}"><br>
+    제목 : <input type="text" name="title" th:value="${post.title}"><br>
+    내용 : <textarea cols="30" rows="50" th:value="${post.content}"></textarea><br>
+
+    <input type="submit" value="등록"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nhnacademy.jdbc.board.comment.mapper.CommentMapper">
+    <resultMap id="postMap" type="com.nhnacademy.jdbc.board.post.domain.Post">
+        <id property="postID" column="postID" />
+    </resultMap>
+
+    <resultMap id="userMap" type="com.nhnacademy.jdbc.board.login.domain.User">
+        <id property="userName" column="userName" />
+    </resultMap>
+
+    <resultMap id="commentMap" type="com.nhnacademy.jdbc.board.comment.domain.Comment">
+        <collection property="post" resultMap="postMap" />
+        <collection property="user" resultMap="userMap" />
+
+    </resultMap>
+    <select id="findAllCommentsByPostID" resultMap="commentMap">
+        select c.CommentID, c.Content, u.UserName, c.CreatedDate
+        from Comments c
+            inner join Posts p
+            inner join Users u
+        where p.PostID = #{id}
+    </select>
+
+    <insert id="insertComment">
+        insert into Comments (PostID, UserID, Content, CreatedDate)
+        values (#{PostID}, #{UserID}, '${content}', #{CreatedDate})
+    </insert>
+</mapper>

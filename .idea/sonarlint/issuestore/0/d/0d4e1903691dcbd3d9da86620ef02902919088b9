@@ -1,0 +1,14 @@
+
+]
+java:S1854H";Remove this useless assignment to local variable "loginID".(´»Åèûÿÿÿÿ8âîÉË0
+N
+java:S1481H",Remove this unused "loginID" local variable.(´»Åèûÿÿÿÿ8ãîÉË0
+j
+java:S1128"HRemove this unused import 'com.nhnacademy.jdbc.board.login.domain.User'.(ê…õÆıÿÿÿÿ8àÒÚğË0
+K
+java:S1128	"/Remove this unused import 'java.sql.Timestamp'.(èò½+8àÒÚğË0
+H
+java:S1128
+"+Remove this unused import 'java.util.Date'.(¸…¼ü8àÒÚğË0
+Q
+java:S1068"/Remove this unused "userService" private field.(‘¾¾ùÿÿÿÿ8àÒÚğË0
